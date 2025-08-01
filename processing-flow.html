@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>処理フロー図</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        
+        .flow-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .process-step {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+        
+        .step-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .step-number {
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            margin-right: 15px;
+        }
+        
+        .step-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .step-content {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-left: 55px;
+        }
+        
+        .step-details {
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+        
+        .arrow-down {
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 25px solid #6c757d;
+            position: relative;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .decision-point {
+            background: linear-gradient(135deg, #ffc107 0%, #ff8f00 100%) !important;
+            color: #333;
+        }
+        
+        .ai-process {
+            background: linear-gradient(135deg, #e91e63 0%, #ad1457 100%) !important;
+        }
+        
+        .user-action {
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%) !important;
+        }
+        
+        .feedback-loop {
+            background: linear-gradient(135deg, #ff9800 0%, #e65100 100%) !important;
+        }
+        
+        .side-processes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+            margin: 30px 0;
+        }
+        
+        .side-process {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 20px;
+            color: #495057;
+        }
+        
+        .side-process h4 {
+            color: #007bff;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .process-step {
+                width: 95%;
+            }
+            
+            .side-processes {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔄 学習プロセス処理フロー図</h1>
+        
+        <div class="flow-container">
+            <div class="process-step user-action">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">初期設定・プロファイル作成</h3>
+                </div>
+                <div class="step-content">
+                    ユーザーが通勤時間、乗り換え情報、学習目標、現在レベルを入力
+                    <div class="step-details">
+                        • 通勤経路の詳細入力（歩行時間、電車時間、乗り換え時間）<br>
+                        • 学習目標設定（ITパスポート合格等）<br>
+                        • 現在のスキルレベル・経験の入力
+                    </div>
+                </div>
+            </div>
+            
+            <div class="arrow-down"></div>
+            
+            <div class="process-step ai-process">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">AI学習プラン生成</h3>
+                </div>
+                <div class="step-content">
+                    Transformerと強化学習により個別最適化されたプランを自動生成
+                    <div class="step-details">
+                        • 通勤時間に合わせたコンテンツ分割<br>
+                        • 乗り換えタイミングでの区切り調整<br>
+                        • 個人の学習特性に応じた難易度設定
+                    </div>
+                </div>
+            </div>
+            
+            <div class="arrow-down"></div>
+            
+            <div class="process-step">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">学習コンテンツ配信</h3>
+                </div>
+                <div class="step-content">
+                    エッジコンピューティングによるオフライン対応コンテンツ提供
+                    <div class="step-details">
+                        • 音声・動画・テキスト形式での配信<br>
+                        • 通信環境に関係なく安定した学習<br>
+                        • 片手操作対応UI
+                    </div>
+                </div>
+            </div>
+            
+            <div class="arrow-down"></div>
+            
+            <div class="process-step user-action">
+                <div class="step-header">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">学習実行・データ収集</h3>
+                </div>
+                <div class="step-content">
+                    ユーザーの学習行動をリアルタイムで記録・分析
+                    <div class="step-details">
+                        • 解答時間、正答率の自動記録<br>
+                        • 集中度、理解度の推定<br>
+                        • 質問内容・頻度の分析
+                    </div>
+                </div>
+            </div>
+            
+            <div class="side-processes">
+                <div class="side-process">
+                    <h4>🤔 質問応答システム</h4>
+                    <p>GPT系モデルによる個別質問対応</p>
+                    <ul style="font-size: 13px;">
+                        <li>理解度に応じた説明レベル調整</li>
+                        <li>専門用語の使い分け</li>
+                        <li>発展的内容の提供</li>
+                    </ul>
+                </div>
+                
+                <div class="side-process">
+                    <h4>📊 リアルタイム分析</h4>
+                    <p>学習パフォーマンスの即座分析</p>
+                    <ul style="font-size: 13px;">
+                        <li>苦手分野の特定</li>
+                        <li>学習ペースの調整</li>
+                        <li>モチベーション管理</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="arrow-down"></div>
+            
+            <div class="process-step decision-point">
+                <div class="step-header">
+                    <div class="step-number">5</div>
+                    <h3 class="step-title">理解度評価・判定</h3>
+                </div>
+                <div class="step-content">
+                    収集したデータから理解度を多角的に評価
+                    <div class="step-details">
+                        • 正答率、解答時間、質問頻度の総合判定<br>
+                        • 学習範囲別の理解度マッピング<br>
+                        • 次のステップへの準備度判定
+                    </div>
+                </div>
+            </div>
+            
+            <div class="arrow-down"></div>
+            
+            <div class="process-step ai-process">
+                <div class="step-header">
+                    <div class="step-number">6</div>
+                    <h3 class="step-title">復習プラン生成</h3>
+                </div>
+                <div class="step-content">
+                    帰り道用の復習コンテンツを動的生成
+                    <div class="step-details">
+                        • 朝の学習内容の定着度測定<br>
+                        • 苦手部分の重点復習<br>
+                        • 記憶定着に最適なタイミング設定
+                    </div>
+                </div>
+            </div>
+            
+            <div class="arrow-down"></div>
+            
+            <div class="process-step feedback-loop">
+                <div class="step-header">
+                    <div class="step-number">7</div>
+                    <h3 class="step-title">学習最適化・フィードバック</h3>
+                </div>
+                <div class="step-content">
+                    強化学習による次回学習プランの改善
+                    <div class="step-details">
+                        • 学習効果の定量的評価<br>
+                        • コンテンツ難易度の動的調整<br>
+                        • 個人学習特性の継続学習
+                    </div>
+                </div>
+            </div>
+            
+            <div class="arrow-down"></div>
+            
+            <div class="process-step">
+                <div class="step-header">
+                    <div class="step-number">8</div>
+                    <h3 class="step-title">進捗可視化・モチベーション管理</h3>
+                </div>
+                <div class="step-content">
+                    学習成果をダッシュボードで表示し、継続をサポート
+                    <div class="step-details">
+                        • 目標達成率の可視化<br>
+                        • 学習時間・理解度の推移表示<br>
+                        • 次の中期目標の提案
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
