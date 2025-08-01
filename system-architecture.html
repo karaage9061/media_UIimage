@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>システム構成図</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        
+        .architecture {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .layer {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        .layer:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .layer h3 {
+            color: #495057;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .component {
+            background: white;
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+        
+        .component:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .frontend { border-left-color: #28a745; }
+        .backend { border-left-color: #007bff; }
+        .data { border-left-color: #ffc107; }
+        .ai { border-left-color: #dc3545; }
+        .infrastructure { border-left-color: #6f42c1; }
+        
+        .connections {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .arrow {
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 20px solid #6c757d;
+            margin: 0 10px;
+        }
+        
+        .data-flow {
+            background: #e3f2fd;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        .data-flow h3 {
+            color: #1976d2;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .flow-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .flow-number {
+            background: #1976d2;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        
+        @media (max-width: 768px) {
+            .architecture {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 社会人向け学習アプリ システム構成図</h1>
+        
+        <div class="architecture">
+            <div class="layer">
+                <h3>📱 フロントエンド層</h3>
+                <div class="component frontend">スマートフォンアプリ（iOS/Android）</div>
+                <div class="component frontend">片手操作対応UI</div>
+                <div class="component frontend">音声認識・読み上げ機能</div>
+                <div class="component frontend">オフライン学習機能</div>
+                <div class="component frontend">進捗ダッシュボード</div>
+                <div class="component frontend">通勤時間設定画面</div>
+            </div>
+            
+            <div class="layer">
+                <h3>⚙️ バックエンド層</h3>
+                <div class="component backend">API Gateway</div>
+                <div class="component backend">ユーザー認証サービス</div>
+                <div class="component backend">学習プラン生成エンジン</div>
+                <div class="component backend">コンテンツ配信サービス</div>
+                <div class="component backend">進捗管理サービス</div>
+                <div class="component backend">質問応答システム</div>
+            </div>
+            
+            <div class="layer">
+                <h3>🤖 AI・分析層</h3>
+                <div class="component ai">Transformer（時系列分析）</div>
+                <div class="component ai">強化学習エージェント</div>
+                <div class="component ai">GPT系生成モデル</div>
+                <div class="component ai">個別最適化エンジン</div>
+                <div class="component ai">理解度分析システム</div>
+                <div class="component ai">コンテンツ自動生成</div>
+            </div>
+        </div>
+        
+        <div class="architecture">
+            <div class="layer">
+                <h3>💾 データ層</h3>
+                <div class="component data">ユーザープロファイルDB</div>
+                <div class="component data">学習コンテンツDB</div>
+                <div class="component data">学習履歴DB</div>
+                <div class="component data">問題・解答DB</div>
+                <div class="component data">分析結果DB</div>
+            </div>
+            
+            <div class="layer">
+                <h3>🏗️ インフラ層</h3>
+                <div class="component infrastructure">クラウドプラットフォーム</div>
+                <div class="component infrastructure">エッジコンピューティング</div>
+                <div class="component infrastructure">CDN（コンテンツ配信）</div>
+                <div class="component infrastructure">ロードバランサー</div>
+                <div class="component infrastructure">セキュリティ・暗号化</div>
+            </div>
+            
+            <div class="layer">
+                <h3>🔌 外部連携</h3>
+                <div class="component">交通機関API</div>
+                <div class="component">資格試験データベース</div>
+                <div class="component">教育コンテンツプロバイダー</div>
+                <div class="component">決済システム</div>
+                <div class="component">通知サービス</div>
+            </div>
+        </div>
+        
+        <div class="data-flow">
+            <h3>📊 データフロー</h3>
+            <div class="flow-item">
+                <div class="flow-number">1</div>
+                <div>ユーザーが通勤時間・目標を入力</div>
+            </div>
+            <div class="flow-item">
+                <div class="flow-number">2</div>
+                <div>AIが個別学習プランを生成・最適化</div>
+            </div>
+            <div class="flow-item">
+                <div class="flow-number">3</div>
+                <div>エッジで学習コンテンツを配信</div>
+            </div>
+            <div class="flow-item">
+                <div class="flow-number">4</div>
+                <div>学習行動・理解度をリアルタイム収集</div>
+            </div>
+            <div class="flow-item">
+                <div class="flow-number">5</div>
+                <div>強化学習で次回コンテンツを調整</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
