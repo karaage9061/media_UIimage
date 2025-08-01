@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社会人向け学習アプリ - 技術資料</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #6c757d;
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        .card {
+            background: linear-gradient(135deg, #667eea 10%, #764ba2 90%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            text-decoration: none;
+            color: white;
+        }
+        .card-icon {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .card-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .card-desc {
+            font-size: 14px;
+            opacity: 0.9;
+            text-align: center;
+            line-height: 1.5;
+        }
+        .info-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+        .info-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .feature-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+        .github-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .github-btn {
+            display: inline-block;
+            background: #24292e;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .github-btn:hover {
+            background: #1a1e22;
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 社会人向け学習アプリ</h1>
+        <p class="subtitle">技術資料 - System Documentation</p>
+        
+        <div class="card-grid">
+            <a href="system-architecture.html" class="card">
+                <div class="card-icon">🏗️</div>
+                <div class="card-title">システム構成図</div>
+                <div class="card-desc">アプリケーションの全体アーキテクチャと各層の技術要素を可視化</div>
+            </a>
+            
+            <a href="processing-flow.html" class="card">
+                <div class="card-icon">🔄</div>
+                <div class="card-title">処理フロー図</div>
+                <div class="card-desc">学習プロセスの詳細な処理手順とAIによる最適化フロー</div>
+            </a>
+            
+            <a href="ui-mockup.html" class="card">
+                <div class="card-icon">📱</div>
+                <div class="card-title">UIイメージ</div>
+                <div class="card-desc">スマートフォンアプリの画面設計と片手操作対応UI</div>
+            </a>
+        </div>
+        
+        <div class="info-section">
+            <h3>🎯 プロジェクト概要</h3>
+            <p>社会人の通勤時間を活用した個別最適化学習システムの技術仕様書です。AI技術（Transformer、強化学習、GPT）を活用し、限られた時間での効率的な学習を実現します。</p>
+            
+            <div class="feature-list">
+                <div class="feature-item">
+                    <strong>🤖 AI個別最適化</strong><br>
+                    学習者の理解度に応じた動的コンテンツ生成
+                </div>
+                <div class="feature-item">
+                    <strong>🚃 通勤時間活用</strong><br>
+                    乗り換え時間を考慮した学習プラン設計
+                </div>
+                <div class="feature-item">
+                    <strong>📱 片手操作対応</strong><br>
+                    満員電車でも使いやすいUI設計
+                </div>
+                <div class="feature-item">
+                    <strong>🎤 音声対応</strong><br>
+                    ハンズフリーでの学習進行が可能
+                </div>
+            </div>
+        </div>
+        
+        <div class="github-link">
+            <a href="https://github.com/your-username/learning-app-docs" class="github-btn">
+                📂 GitHub Repository
+            </a>
+        </div>
+    </div>
+</body>
+</html>
